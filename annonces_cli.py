@@ -50,13 +50,13 @@ def ajouter_annonce():
     choix = input("Choisir catégorie : ").strip()
 
     if not choix.isdigit():
-        print("❌ Catégorie invalide")
+        print(" Catégorie invalide")
         return
 
     index = int(choix) - 1
 
     if index < 0 or index >= len(CATEGORIES):
-        print("❌ Catégorie invalide")
+        print(" Catégorie invalide")
         return
 
     categorie = CATEGORIES[index]
@@ -80,7 +80,7 @@ def ajouter_annonce():
 
     annonces.append(annonce)
 
-    print("✅ Annonce ajoutée")
+    print(" Annonce ajoutée avec succé")
 
     next_id += 1
 
@@ -131,7 +131,7 @@ def rechercher_annonce():
 
         if mot in texte:
 
-            print(f"✅ Trouvé -> ID {annonce['id']} : {annonce['titre']}")
+            print(f" Trouvé -> ID {annonce['id']} : {annonce['titre']}")
             trouve = True
 
     if not trouve:
@@ -162,7 +162,7 @@ def supprimer_annonce():
 
             annonces.pop(i)
 
-            print("✅ Annonce supprimée")
+            print(" Annonce supprimée")
             return
 
     print("Annonce non trouvée.")
@@ -193,7 +193,7 @@ def main():
             supprimer_annonce()
 
         elif choix == "0":
-            print("Au revoir 👋")
+            print("Au revoir ")
             break
 
         else:
